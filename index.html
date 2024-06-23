@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Horas/Aulas</title>
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="js/index.js" defer=""></script>
+    <link rel="stylesheet" href="css/index.css">
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Calculadora de Horas/Aulas</h1>
+      <form id="calcForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="classCountReforco">Aulas - Super Módulo de Reforço:</label>
+            <input type="number" id="classCountReforco" required="">
+          </div>
+          <div class="form-group">
+            <label for="classCountAvancado">Aulas - Super Módulo Avançado:</label>
+            <input type="number" id="classCountAvancado" required="">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="classCountCurso">Aulas - Curso:</label>
+            <input type="number" id="classCountCurso" required="">
+          </div>
+          <div class="form-group">
+            <label for="classCountWorkshop">Aulas - Workshops:</label>
+            <input type="number" id="classCountWorkshop" required="">
+          </div>
+        </div>
+        <button type="submit">Calcular</button>
+      </form>
+
+      <div id="result">
+        <h2>Resultados</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Segmento</th>
+              <th>Valor Total (R$)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Super Módulo de Reforço</td>
+              <td id="totalReforco"></td>
+            </tr>
+            <tr>
+              <td>Super Módulo Avançado</td>
+              <td id="totalAvancado"></td>
+            </tr>
+            <tr>
+              <td>Curso</td>
+              <td id="totalCurso"></td>
+            </tr>
+            <tr>
+              <td>Workshops</td>
+              <td id="totalWorkshop"></td>
+            </tr>
+          </tbody>
+        </table>
+        <canvas id="resultChart"></canvas>
+        <div id="totalValue" class="total-value">Total: R$ <span id="totalCalculated">0.00</span></div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+
+
+  </body>
+
+</html>

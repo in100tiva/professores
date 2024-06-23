@@ -1,0 +1,166 @@
+:root {
+    --background-color: #121212;
+    --container-background: #1e1e1e;
+    --text-color: #e0e0e0;
+    --border-color: #333;
+    --primary-color: #007bff;
+    --primary-color-hover: #0056b3;
+    --secondary-color: #28a745;
+    --tertiary-color: #dc3545;
+    --quaternary-color: #ffc107;
+    --padding: 1rem;
+    --margin: 1.25rem;
+    --border-radius: 0.5rem;
+    --box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alinha ao topo */
+    min-height: 100vh;
+}
+
+.container {
+    background: var(--container-background);
+    padding: var(--padding);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    width: 90%;
+    max-width: 600px;
+    box-sizing: border-box;
+    margin: var(--margin); /* Adiciona margem ao redor para evitar que a div encoste nas bordas */
+}
+
+h1 {
+    margin-bottom: var(--margin);
+    text-align: center;
+    color: var(--text-color);
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: calc(var(--margin) / 2); /* Adiciona espaço entre os inputs */
+}
+
+.form-group {
+    flex: 1 1 45%; /* Ajusta para 2 inputs por linha */
+    margin-bottom: var(--margin);
+}
+
+label {
+    display: block;
+    margin-bottom: calc(var(--margin) / 2);
+    color: var(--text-color);
+}
+
+input, button {
+    width: 100%;
+    padding: var(--padding);
+    margin-bottom: var(--margin);
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
+    background-color: var(--border-color);
+    color: var(--text-color);
+    box-sizing: border-box;
+}
+
+button {
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background: var(--primary-color-hover);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: var(--margin);
+    overflow-x: auto;
+}
+
+th, td {
+    border: 1px solid var(--border-color);
+    padding: var(--padding);
+    text-align: center;
+    color: var(--text-color);
+}
+
+canvas {
+    margin-top: var(--margin);
+    width: 100%;
+    height: 300px; /* Reduz a altura do gráfico */
+    background-color: var(--container-background);
+}
+
+.chart-legend {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.chart-legend ul {
+    display: flex;
+    flex-direction: column; /* Coloca as labels em colunas */
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.chart-legend ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: calc(var(--padding) / 2);
+}
+
+.chart-legend ul li span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: var(--padding);
+}
+
+.total-value {
+    text-align: center;
+    font-size: 1.25rem;
+    margin-top: var(--margin);
+    color: var(--text-color);
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 100%;
+        padding: calc(var(--padding) / 2);
+    }
+
+    .form-row {
+        flex-direction: column;
+    }
+
+    .form-group {
+        flex: 1 1 100%;
+    }
+
+    input, button {
+        padding: calc(var(--padding) / 2);
+        margin-bottom: calc(var(--margin) / 2);
+    }
+
+    .chart-legend {
+        flex-direction: column;
+    }
+}
