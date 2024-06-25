@@ -35,7 +35,7 @@ document.getElementById('calcForm').addEventListener('submit', function(event) {
 function renderChart(values) {
     const ctx = document.getElementById('resultChart').getContext('2d');
     new Chart(ctx, {
-        type: 'pie',
+        type: 'line',
         data: {
             labels: ['Super Módulo de Reforço', 'Super Módulo Avançado', 'Curso', 'Workshops'],
             datasets: [{
